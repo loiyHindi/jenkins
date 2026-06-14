@@ -9,28 +9,20 @@ pipeline {
             }
         }
 
-        stage('Install') {
+        stage('Run Node App') {
             steps {
-                sh 'npm ci'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'npm run build'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'npm test || true'
+                sh 'node index.js'
             }
         }
     }
 
     post {
-        always {
-            echo 'Build finished'
+        success {
+            echo 'Build SUCCESS ✔'
+        }
+
+        failure {
+            echo 'Build FAILED ✖'
         }
     }
 }

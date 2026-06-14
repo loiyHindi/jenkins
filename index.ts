@@ -1,1 +1,8 @@
-console.log("Hello, TypeScript 6.0.3 with ESNext modules and ES2024 target!");
+console.log("Starting app...");
+
+const sum = (a, b) => a + b;
+
+console.log("Result:", sum(2, 3));
+
+// Uncomment this to simulate failure:
+// throw new Error("Boom build should fail");
